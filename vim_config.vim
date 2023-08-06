@@ -41,4 +41,5 @@ set ttimeout
 set ttimeoutlen=100
 set wildmenu
 set nu
+set ignorecase
 " vim: set ft=vim :
