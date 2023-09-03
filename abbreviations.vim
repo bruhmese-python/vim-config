@@ -4,7 +4,7 @@ iabbrev le <=
 iabbrev ge >=
 iabbrev eq ==
 iabbrev neq !=
-iabbrev indo *
+iabbrev into *
 iabbrev bi /
 iabbrev rem %
 iabbrev plus +
@@ -20,5 +20,11 @@ iabbrev vector std::vector<><Left>
 iabbrev map std::map<,><Left><Left>
 iabbr out std::out<<;<Left>
 iabbr debug std::cout<< "\n<C-r>"\:" << <C-r>";
-iabbr boilerplate #include<iostream>using namespace std;int main(){	return 0;}<Up><Up>	
+iabbr boilerplate #include<iostream>
+using namespace std;
+
+int main(){
+	
+return 0;
+}<Up><Up>	
 noremap F yy?main.*(<CR>O<C-r>"<Esc>A{<CR>}<Esc>O
