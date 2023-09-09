@@ -3,27 +3,31 @@ if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <C-U> u
+noremap <C-s> :mksession! session.vim<CR>
 noremap  w :w
 noremap \| :vsplit
 noremap \ :split
 noremap  q :q
+noremap  b :b 
 "select
 noremap  0 di(<C-r>")
 "word
 noremap  9 viwdi(<C-r>")
-noremap  e :vsplit:e\.
-noremap  / I//
+noremap  e :vsplit
+:e\.
+/
 "nnoremap  s :s/ /_/g<CR>
 nnoremap  s ^/ <CR>
 nnoremap <NL> i<CR><ESC>
 nnoremap ; A;<Esc>
 noremap <F7> \|:terminal
+inoremap jk <Esc>
 map Q gq
 vmap gx <Plug>NetrwBrowseXVis
 nmap gx <Plug>NetrwBrowseX
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
-inoremap  u
+noremap <C-l> :reg<CR>
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set background=dark
@@ -48,4 +52,7 @@ set ttimeoutlen=100
 set wildmenu
 set nu
 set ignorecase
+set relativenumber
+
+colorscheme gruvbox-material
 " vim: set ft=vim :
