@@ -4,7 +4,7 @@ iabbrev le <=
 iabbrev ge >=
 iabbrev eq ==
 iabbrev neq !=
-iabbrev into *
+iabbrev indo *
 iabbrev bi /
 iabbrev rem %
 iabbrev plus +
@@ -16,6 +16,7 @@ iabbrev of []<Left>
 iabbrev cbra {<CR>}<Esc>O
 iabbrev esc <Esc>/[})}\]\>]<CR>a
 iabbrev cout std::cout<<
+iabbrev println std::cout<<"\n"<Left>
 iabbrev vector std::vector<><Left>
 iabbrev map std::map<,><Left><Left>
 iabbr out std::out<<;<Left>
@@ -27,4 +28,7 @@ int main(){
 	
 return 0;
 }<Up><Up>	
+iabbr " ""<Left>
+noremap  / I//
+noremap <C-x> I<Del><Del>
 noremap F yy?main.*(<CR>O<C-r>"<Esc>A{<CR>}<Esc>O
