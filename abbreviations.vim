@@ -31,4 +31,8 @@ return 0;
 iabbr " ""<Left>
 noremap  / I//
 noremap <C-x> I<Del><Del>
-noremap F yy?main.*(<CR>O<C-r>"<Esc>A{<CR>}<Esc>O
+"noremap F yy?main.*(<CR>O<C-r>"<Esc>A{<CR>}<Esc>O
+"edit header
+nnoremap <Space>a :let @" = substitute(expand('%:t'), '\..*', '', '') . '.hpp' <bar> execute 'edit ' . @"<CR>
+"edit source
+nnoremap <Space>f :let @" = substitute(expand('%:t'), '\..*', '', '') . '.cpp' <bar> execute 'edit ' . @"<CR>
