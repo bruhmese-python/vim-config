@@ -2,9 +2,13 @@ version 6.0
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
+"scroll up 
 inoremap <C-U> u
+"session
 noremap <C-s> :mksession! session.vim<CR>
 noremap <F5> :source session.vim<CR>
+"suggestion
+inoremap np <C-n>
 "find
 noremap f /
 noremap F ?
@@ -30,20 +34,31 @@ noremap  e :vsplit
 /<Esc>
 "replace spaces
 nnoremap  s ^/ <CR>
-"Ctrl j remapping
+"Split lines : Ctrl j
 nnoremap <NL> i<CR><ESC>
 "colonize
 nnoremap ; A;<Esc>
+"tabs
+nnoremap t >>
 "terminal
 noremap <F7> \|:terminal
+noremap <F4> :set splitright
+:vsplit
+ :terminal
+<C-w>j:q<CR>
 "esc
 inoremap jk <Esc>
 "paste in insert mode
 inoremap PP <C-r>"
 "registers
 noremap <C-l> :reg<CR>
-"snippets suggestion: requires UltiSnips
-nnoremap <Space>u :UltiSnipsEdit<CR>1<CR>:g/snippet /normal 0ee"Ayiwo<Esc>"Add<CR>:bdelete!<CR>:split<CR>:edit! .snippets<CR>:put a<CR>:w<CR>:q<CR>:echo "Loaded snippets suggestion"<CR>
+"load snippets suggestion: requires UltiSnips
+nnoremap <Space>u qaq:UltiSnipsEdit<CR>1<CR>:g/snippet /normal 0ee"Ayiwo<C-v><Esc>"Add<CR>:bdelete!<CR>:split<CR>:edit! .snippets<CR>ggdG:put a<CR>:w<CR>:q<CR>:echo "Loaded snippets suggestion"<CR>
+"selection modes toggle
+noremap <F2> :set mouse=v
+noremap <F3> :set mouse=a
+"snippets suggestion <C-space> 
+inoremap <C-@> <C-p><C-n><C-n>
 
 map Q gq
 vmap gx <Plug>NetrwBrowseXVis
@@ -68,7 +83,7 @@ set printoptions=paper:a4
 set ruler
 set scrolloff=5
 set showcmd
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set suffixes=.snippets,.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set ttimeout
 set ttimeoutlen=100
 set wildmenu
